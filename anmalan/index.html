@@ -7,15 +7,15 @@
   
   <title>Anmälan | Lejonkulan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="const endpoint &#x3D; &#39;http:&#x2F;&#x2F;sti-starcraft.org:3000&#x2F;graphql&#39;; var members;  if (window.location.href.startsWith(&#39;https&#39;)) {   setTimeout(() &#x3D;&gt; {     const box &#x3D; document.getElementById(&#39;registerContain">
+  <meta name="description" content="Anmälan är inte öppen än för allmänheten, vänligen återkom senare till denna sida, då kommer du att hitta ett anmälningsformulär här.    const endpoint &#x3D; &#39;http:&#x2F;&#x2F;sti-starcraft.org:3000&#x2F;graphql&#39;; &#x2F;&#x2F;co">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Anmälan">
 <meta property="og:url" content="http://towelie89.github.io/anmalan/index.html">
 <meta property="og:site_name" content="Lejonkulan">
-<meta property="og:description" content="const endpoint &#x3D; &#39;http:&#x2F;&#x2F;sti-starcraft.org:3000&#x2F;graphql&#39;; var members;  if (window.location.href.startsWith(&#39;https&#39;)) {   setTimeout(() &#x3D;&gt; {     const box &#x3D; document.getElementById(&#39;registerContain">
+<meta property="og:description" content="Anmälan är inte öppen än för allmänheten, vänligen återkom senare till denna sida, då kommer du att hitta ett anmälningsformulär här.    const endpoint &#x3D; &#39;http:&#x2F;&#x2F;sti-starcraft.org:3000&#x2F;graphql&#39;; &#x2F;&#x2F;co">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-28T11:26:22.000Z">
-<meta property="article:modified_time" content="2024-12-07T21:44:33.732Z">
+<meta property="article:modified_time" content="2025-06-17T19:03:49.071Z">
 <meta property="article:author" content="Göteborgs Muay Thai Lejonkulan">
 <meta name="twitter:card" content="summary">
   
@@ -138,13 +138,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         
-        <!-- <h3>
+        <h3>
 Anmälan är inte öppen än för allmänheten, vänligen återkom senare till denna sida, då kommer du att hitta ett
 anmälningsformulär här.
-</h3> -->
+</h3>
 
 <script defer>
 const endpoint = 'http://sti-starcraft.org:3000/graphql';
+//const endpoint = 'http://localhost:3000/graphql';
 var members;
 
 if (window.location.href.startsWith('https')) {
@@ -181,7 +182,7 @@ const validateSSN = ssn => {
   );
 }
 
-function submitMember(firstName, lastName, ssn, email, trainingGroup, memberLastTerm = 0, lastTermTrainingGroup = '', message = '') {
+function submitMember(firstName, lastName, ssn, email, trainingGroup, memberLastTerm = 0, lastTermTrainingGroup = '', message = '', gender = '') {
     message = message.replaceAll('\n', ' ');
 
     const query =
@@ -195,8 +196,8 @@ function submitMember(firstName, lastName, ssn, email, trainingGroup, memberLast
         trainingGroup:"${trainingGroup}"
         memberLastTerm:${memberLastTerm}
         lastTermTrainingGroup:"${lastTermTrainingGroup}"
+        gender:"${gender}"
       ) {
-        id
         firstName
         lastName
         ssn
@@ -205,6 +206,7 @@ function submitMember(firstName, lastName, ssn, email, trainingGroup, memberLast
         trainingGroup
         memberLastTerm
         lastTermTrainingGroup
+        gender
       }
     }`;
   return fetch(endpoint, {
@@ -367,6 +369,10 @@ function setListeners() {
       message += 'Träningsgrupp saknas\n';
       errorFound = true;
     }
+    if (!document.getElementById('genderSelect').value || document.getElementById('genderSelect').value === 'none') {
+      message += 'Kön ej valt\n';
+      errorFound = true;
+    }
     if (document.getElementById('memberLastTerm').checked) {
       if (!document.getElementById('trainingGroup2').value || document.getElementById('trainingGroup2').value === 'none') {
         message += 'Träningsgrupp förra terminen saknas\n';
@@ -392,7 +398,8 @@ function setListeners() {
         document.getElementById('trainingGroup').value,
         document.getElementById('memberLastTerm').checked ? 1 : 0,
         document.getElementById('trainingGroup2').value === 'none' ? '': document.getElementById('trainingGroup2').value,
-        document.getElementById('memberMessage').value
+        document.getElementById('memberMessage').value,
+        document.getElementById('genderSelect').value
       ).then(() => {
         document.getElementById('submitButton').removeAttribute('disabled');
       })
@@ -534,7 +541,7 @@ document.addEventListener("DOMContentLoaded", function(){
       filter: drop-shadow(2px 4px 6px gainsboro);
     }
 </style>
-
+<!-- 
 <div id="registerContainer">
   <div id="successBox" style="display: none;">
     <div id="checkboxContainer">
@@ -628,6 +635,18 @@ document.addEventListener("DOMContentLoaded", function(){
             </div>
         </div>
         <div class="signup__row">
+            <div class="signup__column">
+                Kön <span class="mandatory"></span>
+            </div>
+            <div class="signup__column">
+                <select id="genderSelect">
+                    <option value="none">VÄLJ</option>
+                    <option value="male">Kille</option>
+                    <option value="female">Tjej</option>
+                </select>
+            </div>
+        </div>
+        <div class="signup__row">
             <div class="signup__column double" style="font-size: 1em" id="chosenGroupInfo"></div>
         </div>
         <div class="signup__row info" id="trainingGroupDescription" style="display: none; margin-bottom: 10px;">
@@ -675,11 +694,11 @@ document.addEventListener("DOMContentLoaded", function(){
     </div>
   </form>
 </div>
-
+ -->
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://towelie89.github.io/anmalan/index.html" data-id="cm9k11zal00084geq3avu3f55" class="article-share-link">Dela</a>
+      <a data-url="http://towelie89.github.io/anmalan/index.html" data-id="cmc0w9ybq0000ioeqcipx2ja9" class="article-share-link">Dela</a>
       
         <a href="http://towelie89.github.io/anmalan/index.html#disqus_thread" class="article-comment-link">Kommentarer</a>
       
@@ -757,7 +776,7 @@ document.addEventListener("DOMContentLoaded", function(){
 <script>
   var disqus_shortname = 'lejonkulan-1';
   
-  var disqus_url = 'http://towelie89.github.io/anmalan-vt2024-privat/index.html';
+  var disqus_url = 'http://towelie89.github.io/anmalan/index.html';
   
   (function(){
     var dsq = document.createElement('script');
