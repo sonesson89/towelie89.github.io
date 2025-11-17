@@ -7,15 +7,15 @@
   
   <title>Anmälan | Lejonkulan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="const endpoint &#x3D; &#39;http:&#x2F;&#x2F;sti-starcraft.org:3000&#x2F;graphql&#39;; &#x2F;&#x2F;const endpoint &#x3D; &#39;http:&#x2F;&#x2F;localhost:3000&#x2F;graphql&#39;; var members;  if (window.location.href.startsWith(&#39;https&#39;)) {   setTimeout(() &#x3D;&gt; {">
+  <meta name="description" content="Anmälan är inte öppen än för allmänheten, vänligen återkom senare till denna sida, då kommer du att hitta ett anmälningsformulär här.        &#x2F;** const endpoint &#x3D; &#39;http:&#x2F;&#x2F;sti-starcraft.org:3000&#x2F;graphq">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Anmälan">
 <meta property="og:url" content="http://towelie89.github.io/anmalan/index.html">
 <meta property="og:site_name" content="Lejonkulan">
-<meta property="og:description" content="const endpoint &#x3D; &#39;http:&#x2F;&#x2F;sti-starcraft.org:3000&#x2F;graphql&#39;; &#x2F;&#x2F;const endpoint &#x3D; &#39;http:&#x2F;&#x2F;localhost:3000&#x2F;graphql&#39;; var members;  if (window.location.href.startsWith(&#39;https&#39;)) {   setTimeout(() &#x3D;&gt; {">
+<meta property="og:description" content="Anmälan är inte öppen än för allmänheten, vänligen återkom senare till denna sida, då kommer du att hitta ett anmälningsformulär här.        &#x2F;** const endpoint &#x3D; &#39;http:&#x2F;&#x2F;sti-starcraft.org:3000&#x2F;graphq">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-28T11:26:22.000Z">
-<meta property="article:modified_time" content="2025-07-10T14:51:23.912Z">
+<meta property="article:modified_time" content="2025-11-17T20:16:21.734Z">
 <meta property="article:author" content="Göteborgs Muay Thai Lejonkulan">
 <meta name="twitter:card" content="summary">
   
@@ -138,12 +138,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         
-        <!--<h3>
+        <h3>
 Anmälan är inte öppen än för allmänheten, vänligen återkom senare till denna sida, då kommer du att hitta ett
 anmälningsformulär här.
-</h3>-->
+</h3>
 
 <script defer>
+  
+
+/**
 const endpoint = 'http://sti-starcraft.org:3000/graphql';
 //const endpoint = 'http://localhost:3000/graphql';
 var members;
@@ -261,17 +264,17 @@ function fetchAllSubmissions() {
     console.log('data returned:', resp);
     members = resp.data.members;
 
-    /* const nyborjare_count = members.filter(x => x.trainingGroup === 'Nybörjargruppen').length;
-    const fortsattare_count = members.filter(x => x.trainingGroup === 'Fortsättargruppen').length;
-    const avancerade_count = members.filter(x => x.trainingGroup === 'AvanceradeGruppen').length;
-    const tavling_count = members.filter(x => x.trainingGroup === 'Tävlingsgruppen').length;
-    const morgon_count = members.filter(x => x.trainingGroup === 'MorgonFörmiddag').length;
+    //const nyborjare_count = members.filter(x => x.trainingGroup === 'Nybörjargruppen').length;
+    //const fortsattare_count = members.filter(x => x.trainingGroup === 'Fortsättargruppen').length;
+    //const avancerade_count = members.filter(x => x.trainingGroup === 'AvanceradeGruppen').length;
+    //const tavling_count = members.filter(x => x.trainingGroup === 'Tävlingsgruppen').length;
+    //const morgon_count = members.filter(x => x.trainingGroup === 'MorgonFörmiddag').length;
 
-    document.querySelector('#trainingGroup option:nth-child(2)').innerText += ` (${nyborjare_count} anmälda)`;
-    document.querySelector('#trainingGroup option:nth-child(3)').innerText += ` (${fortsattare_count} anmälda)`;
-    document.querySelector('#trainingGroup option:nth-child(4)').innerText += ` (${avancerade_count} anmälda)`;
-    document.querySelector('#trainingGroup option:nth-child(5)').innerText += ` (${tavling_count} anmälda)`;
-    document.querySelector('#trainingGroup option:nth-child(6)').innerText += ` (${morgon_count} anmälda)`; */
+    //document.querySelector('#trainingGroup option:nth-child(2)').innerText += ` (${nyborjare_count} anmälda)`;
+    //document.querySelector('#trainingGroup option:nth-child(3)').innerText += ` (${fortsattare_count} anmälda)`;
+    //document.querySelector('#trainingGroup option:nth-child(4)').innerText += ` (${avancerade_count} anmälda)`;
+    //document.querySelector('#trainingGroup option:nth-child(5)').innerText += ` (${tavling_count} anmälda)`;
+    //document.querySelector('#trainingGroup option:nth-child(6)').innerText += ` (${morgon_count} anmälda)`;
   }).catch(console.error);
 }
 
@@ -298,11 +301,11 @@ function setListeners() {
     if (document.getElementById('trainingGroup').value !== 'none') {
       document.getElementById('trainingGroupDescription').style.display = 'block';
 
-      /* <option value="Nybörjargruppen">Nybörjargruppen</option>
-      <option value="Fortsättargruppen">Fortsättargruppen</option>
-      <option value="AvanceradeGruppen">Avancerade gruppen</option>
-      <option value="Tävlingsgruppen">Tävlingsgruppen</option>
-      <option value="MorgonFörmiddag">Endast morgon/förmiddag</option> */
+      //<option value="Nybörjargruppen">Nybörjargruppen</option>
+      //<option value="Fortsättargruppen">Fortsättargruppen</option>
+      //<option value="AvanceradeGruppen">Avancerade gruppen</option>
+      //<option value="Tävlingsgruppen">Tävlingsgruppen</option>
+      //<option value="MorgonFörmiddag">Endast morgon/förmiddag</option>
 
       if (document.getElementById('trainingGroup').value === 'Nybörjargruppen') {
         document.querySelector('#trainingGroupDescription div').innerHTML =
@@ -411,7 +414,7 @@ document.addEventListener("DOMContentLoaded", function(){
   fetchAllSubmissions();
   setListeners();
 });
-
+*/
 </script>
 
 <style>
@@ -541,7 +544,7 @@ document.addEventListener("DOMContentLoaded", function(){
       filter: drop-shadow(2px 4px 6px gainsboro);
     }
 </style>
-<div id="registerContainer">
+<!-- <div id="registerContainer">
   <div id="successBox" style="display: none;">
     <div id="checkboxContainer">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
@@ -692,11 +695,11 @@ document.addEventListener("DOMContentLoaded", function(){
         </div>
     </div>
   </form>
-</div>
+</div> -->
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://towelie89.github.io/anmalan/index.html" data-id="cmd96tpp10002pceq7fzufw8z" class="article-share-link">Dela</a>
+      <a data-url="http://towelie89.github.io/anmalan/index.html" data-id="cmi3l6s5h0000useqehj2fynu" class="article-share-link">Dela</a>
       
         <a href="http://towelie89.github.io/anmalan/index.html#disqus_thread" class="article-comment-link">Kommentarer</a>
       
@@ -774,7 +777,7 @@ document.addEventListener("DOMContentLoaded", function(){
 <script>
   var disqus_shortname = 'lejonkulan-1';
   
-  var disqus_url = 'http://towelie89.github.io/anmalan-privat-ht2025/index.html';
+  var disqus_url = 'http://towelie89.github.io/anmalan/index.html';
   
   (function(){
     var dsq = document.createElement('script');
